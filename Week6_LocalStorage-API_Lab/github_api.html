@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GitHub API Example</title>
+</head>
+<body>
+    <h2>GitHub User Lookup</h2>
+    <input type="text" id="username" placeholder="Enter GitHub Username">
+    <button onclick="getUser()">Get User</button>
+    <div id="userResult"></div>
+ 
+    <script>
+        function getUser() {
+            let username = document.getElementById("username").value;
+            let url = `https://api.github.com/users/${username}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                   document.getElementById("userResult").innerHTML = `
+                       <h3>${data.name || "No Name Found"}</h3>
+                       <img src="${data.avatar_url}" width="100">
+                       <p>Public Repos: ${data.public_repos}</p>
+                       <p>Followers: ${data.followers}</p>
+                    `;
+                })
+                .catch(error => console.error("Error fetching GitHub data:", error));
+        }
+    </script>
+</body>
+</html>
+ 

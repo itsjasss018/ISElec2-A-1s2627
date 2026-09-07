@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Local Storage - User Preferences</title>
+    <style>
+        body.dark-mode { background-color: black; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Choose Your Preferences</h2>
+    
+<label>Theme:</label>
+    <select id="theme">
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+    </select>
+ 
+   
+<label>Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+    </select>
+ 
+    <button onclick="savePreferences()">Save Preferences</button>
+    <p id="message"></p>
+ 
+    <script>
+        function savePreferences() {
+           let theme = document.getElementById("theme").value;
+           let language = document.getElementById("language").value;
+           localStorage.setItem("theme", theme);
+           localStorage.setItem("language", language);
+           applyPreferences();
+           document.getElementById("message").innerText = "Preferences Saved!";
+        }
+ 
+        function applyPreferences() {
+            let savedTheme = localStorage.getItem("theme");
+            let savedLanguage = localStorage.getItem("language");
+            
+            if (savedTheme === "dark") {
+               document.body.classList.add("dark-mode");
+            } else {
+               document.body.classList.remove("dark-mode");
+            }
+ 
+           document.getElementById("theme").value = savedTheme || "light";
+           document.getElementById("language").value = savedLanguage || "en";
+        }
+ 
+        applyPreferences();
+    </script>
+</body>
+</html>

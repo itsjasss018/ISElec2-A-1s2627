@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Maps API Example</title>
+    <script>
+       function searchLocation() {
+            let location = document.getElementById("locationInput").value;
+            let geocoder = new google.maps.Geocoder();
+            
+            geocoder.geocode({ 'address': location }, function(results, status) {
+                if (status == 'OK'){
+                    let map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 10,
+                        center: results[0].geometry.location
+                    });
+                } else {
+                alert("Location not found!");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Google Maps Integration</h2>
+    <input type = "text" id="locationInput" placeholder="Enter a location"> <br>
+    <button onclick="searchLocation()">Search Location</button>
+    <div id="map" style="height:400px; width:100%;"></div>
+ 
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
