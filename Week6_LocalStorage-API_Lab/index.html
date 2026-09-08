@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="logo">
+            NEXORA
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#features">FEATURES</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search..."
+            >
+            <button id="searchButton">
+                SEARCH
+            </button>
+        </div>
+    </header>
+    <!-- HERO / CAROUSEL -->
+    <section class="hero" id="home">
+        <!-- SLIDE 1 -->
+        <div class="slide active-slide">
+            <img src="nexora101.png" alt="Slide 1">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>WELCOME TO NEXORA</h1>
+                <p> Discover modern solutions designed to connect,inspire, and create a better digital experience.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn primary-btn">
+                        EXPLORE FEATURES
+                    </a>
+                    <a href="#about" class="btn secondary-btn">
+                        LEARN MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <img src="nexora101.png" alt="Slide 2">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1> EVERYTHING YOU NEED TO EXPLORE WEB TECHNOLOGIES</h1>
+                <p>Discover interactive tools powered by JavaScript, APIs, and browser technologies.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn primary-btn">
+                        VIEW FEATURES
+                    </a>
+                    <a href="#contact" class="btn secondary-btn">
+                        CONTACT US
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <img src="nexora101.png" alt="Slide 3">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>READY TO EXPLORE?</h1>
+                <p>Experience the power of interactive web technologies in one place.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn primary-btn">
+                        GET STARTED
+                    </a>
+                    <a href="#contact" class="btn secondary-btn">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- LEFT ARROW -->
+        <button class="carousel-arrow left-arrow" id="prevBtn">
+            &#10094;
+        </button>
+        <!-- RIGHT ARROW -->
+        <button class="carousel-arrow right-arrow" id="nextBtn">
+            &#10095;
+        </button>
+        <!-- SLIDE INDICATORS -->
+        <div class="dots">
+            <span class="dot active-dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+    <section class="features-section" id="features">
+
+    <div class="features-overlay"></div>
+
+    <div class="section-heading">
+
+        <p class="eyebrow">EXPLORE</p>
+
+        <h2>NEXORA FEATURES</h2>
+
+        <p>
+            Explore the different web technologies
+            included in NEXORA.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <!-- LOCAL STORAGE -->
+
+        <div class="feature-card">
+
+            <div class="card-image">
+                <img src="ls.png"
+                     alt="Local Storage">
+            </div>
+
+            <div class="card-content">
+
+                <div class="feature-number">01</div>
+
+                <h3>LOCAL STORAGE</h3>
+
+                <p>
+                    Save and retrieve information directly
+                    from your browser using Local Storage.
+                </p>
+
+                <a href="local_storage.html"
+                   class="learn-btn">
+                    LEARN MORE →
+            </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PREFERENCES -->
+
+        <div class="feature-card">
+
+            <div class="card-image">
+                <img src="up.png"
+                     alt="Preferences">
+            </div>
+
+            <div class="card-content">
+
+                <div class="feature-number">02</div>
+
+                <h3>PREFERENCES</h3>
+
+                <p>
+                    Customize your preferences and save
+                    your selected settings.
+                </p>
+
+                <a href="user_preferences.html"
+                   class="learn-btn">
+                    LEARN MORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEATHER -->
+
+        <div class="feature-card">
+
+            <div class="card-image">
+                <img src="weather.png"
+                     alt="Weather">
+            </div>
+
+            <div class="card-content">
+
+                <div class="feature-number">03</div>
+
+                <h3>WEATHER</h3>
+
+                <p>
+                    Search for a city and view its current
+                    weather information.
+                </p>
+
+                <a href="weather_api.html"
+                   class="learn-btn">
+                    LEARN MORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAPS -->
+
+        <div class="feature-card">
+
+            <div class="card-image">
+                <img src="map.png"
+                     alt="Maps">
+            </div>
+
+            <div class="card-content">
+
+                <div class="feature-number">04</div>
+
+                <h3>MAPS</h3>
+
+                <p>
+                    Search for locations and view them
+                    using an interactive map.
+                </p>
+
+                <a href="map_api.html"
+                   class="learn-btn">
+                    LEARN MORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GITHUB -->
+
+        <div class="feature-card">
+
+            <div class="card-image">
+                <img src="github.png"
+                     alt="GitHub">
+            </div>
+
+            <div class="card-content">
+
+                <div class="feature-number">05</div>
+
+                <h3>GITHUB</h3>
+
+                <p>
+                    Search GitHub users and view their
+                    public profile information.
+                </p>
+
+                <a href="github_api.html"
+                   class="learn-btn">
+                    LEARN MORE →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    </section>
+
+    <script src="script.js"></script>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+
+    <div class="footer-container">
+
+        <!-- NEXORA -->
+        <div class="footer-column">
+            <h3>NEXORA</h3>
+            <p>
+                About NEXORA
+            </p>
+            <p class="footer-description">
+                Explore modern web technologies and
+                interactive digital solutions in one place.
+            </p>
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+            <h3>QUICK LINKS</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+        </div>
+
+
+        <!-- SUPPORT -->
+        <div class="footer-column">
+            <h3>SUPPORT</h3>
+
+            <a href="#faq">FAQ</a>
+            <a href="#help">Help</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+
+        <!-- CONTACT -->
+        <div class="footer-column">
+            <h3>CONTACT</h3>
+
+            <a href="mailto:nexora@example.com">Email</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="#socials">Socials</a>
+        </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 NEXORA. All Rights Reserved.
+        </p>
+    </div>
+
+</footer>
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>

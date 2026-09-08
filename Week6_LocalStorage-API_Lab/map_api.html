@@ -1,31 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Google Maps API Example</title>
-    <script>
-       function searchLocation() {
-            let location = document.getElementById("locationInput").value;
-            let geocoder = new google.maps.Geocoder();
-            
-            geocoder.geocode({ 'address': location }, function(results, status) {
-                if (status == 'OK'){
-                    let map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 10,
-                        center: results[0].geometry.location
-                    });
-                } else {
-                alert("Location not found!");
-                }
-            });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OpenStreetMap Integration</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" 
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
         }
-    </script>
+    </style>
 </head>
+
 <body>
-    <h2>Google Maps Integration</h2>
-    <input type = "text" id="locationInput" placeholder="Enter a location"> <br>
-    <button onclick="searchLocation()">Search Location</button>
-    <div id="map" style="height:400px; width:100%;"></div>
- 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+    <h2>OpenStreetMap Integration</h2>
+
+    <input 
+        type="text" 
+        id="locationInput" 
+        placeholder="Enter a location">
+
+    <br>
+
+    <button onclick="searchLocation()">
+        Search Location
+    </button>
+
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+    <script>
+
+        // Create the map
+        let map = L.map('map').setView([13.1391, 123.7438], 10);
+
+
+        // Add OpenStreetMap
+        L.tileLayer(
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap contributors'
+            }
+        ).addTo(map);
+
+
+        // Variable for the marker
+        let marker;
+
+
+        // Search function
+        function searchLocation() {
+
+            // Get what the user typed
+            let location = document.getElementById("locationInput").value;
+
+
+            // If empty
+            if (location === "") {
+                alert("Please enter a location!");
+                return;
+            }
+
+
+            // Search the location using Nominatim
+            fetch(
+                "https://nominatim.openstreetmap.org/search?format=json&q="
+                + encodeURIComponent(location)
+            )
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                // If location is found
+                if (data.length > 0) {
+
+                    let latitude = data[0].lat;
+                    let longitude = data[0].lon;
+
+
+                    // Move the map
+                    map.setView([latitude, longitude], 13);
+
+
+                    // Remove old marker
+                    if (marker) {
+                        map.removeLayer(marker);
+                    }
+
+
+                    // Add marker
+                    marker = L.marker([latitude, longitude])
+                        .addTo(map)
+                        .bindPopup(data[0].display_name)
+                        .openPopup();
+
+                } else {
+
+                    alert("Location not found!");
+
+                }
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+                alert("Error searching for location!");
+
+            });
+
+        }
+
+    </script>
+
 </body>
 </html>
