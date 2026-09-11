@@ -1,310 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-
     <title>JASYNOVA | Web Technology Hub</title>
-
-
     <!-- BOOTSTRAP CSS -->
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-
+        rel="stylesheet">
     <!-- CUSTOM CSS -->
-
     <link rel="stylesheet" href="style.css">
-
 </head>
-
-
 <body>
-
-
-<!-- =========================================
-     NAVBAR
-========================================= -->
-
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
     <div class="container">
-
         <a class="navbar-brand" href="index.html">
             JASY<span>NOVA</span>
         </a>
-
-
         <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-        >
-
+            class="navbar-toggler"type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
-
         </button>
-
-
         <div
-            class="collapse navbar-collapse"
-            id="navbarNav"
-        >
-
+            class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-
                 <li class="nav-item">
-                    <a class="nav-link active"
-                       href="index.html">
-                        HOME
-                    </a>
+                    <a class="nav-link active" href="index.html"> HOME </a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="local_storage.html">
-                        STORAGE
-                    </a>
+                    <a class="nav-link" href="local_storage.html"> STORAGE </a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="user_preferences.html">
-                        PREFERENCES
-                    </a>
+                    <a class="nav-link" href="user_preferences.html"> PREFERENCES </a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="weather_api.html">
-                        WEATHER
-                    </a>
+                    <a class="nav-link" href="weather_api.html"> WEATHER </a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="map_api.html">
-                        MAPS
-                    </a>
+                    <a class="nav-link" href="map_api.html"> MAPS </a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="github_api.html">
-                        GITHUB
-                    </a>
+                    <a class="nav-link" href="github_api.html"> GITHUB </a>
                 </li>
-
             </ul>
-
         </div>
-
     </div>
-
 </nav>
-
-
-
 <!-- HERO CAROUSEL -->
-
 <section class="hero-section">
-
-    <div
-        id="jasynovaCarousel"
-        class="carousel slide"
-        data-bs-ride="carousel"
-    >
-
+    <div id="jasynovaCarousel" class="carousel slide" data-bs-ride="carousel">
         <!-- INDICATORS -->
-
         <div class="carousel-indicators">
-
-            <button
-                type="button"
-                data-bs-target="#jasynovaCarousel"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-            ></button>
-
-            <button
-                type="button"
-                data-bs-target="#jasynovaCarousel"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-            ></button>
-
-            <button
-                type="button"
-                data-bs-target="#jasynovaCarousel"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-            ></button>
-
+            <button type="button" data-bs-target="#jasynovaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#jasynovaCarousel" data-bs-slide-to="1" aria-label="Slide 2" ></button>
+            <button type="button" data-bs-target="#jasynovaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
-
         <!-- SLIDES -->
-
         <div class="carousel-inner">
-
-
             <!-- SLIDE 1 -->
-
             <div class="carousel-item active">
-
                 <div class="container hero-content">
-
-                    <p class="eyebrow-text fw-bold">
-                        WEB TECHNOLOGY LABORATORY
-                    </p>
-
-                    <h1>
-                        Welcome to JASYNOVA
-                    </h1>
-
-                    <p>
-                        A centralized web technology hub showcasing
-                        interactive browser features, Local Storage,
-                        and API integrations.
-                    </p>
-
-                    <a
-                        href="#features"
-                        class="btn btn-jasynova mt-3"
-                    >
-                        Explore Features
-                    </a>
-
+                    <p class="eyebrow-text fw-bold"> WEB TECHNOLOGY LABORATORY </p>
+                    <h1> Welcome to JASYNOVA </h1>
+                    <p> A centralized web technology hub showcasing interactive browser features, Local Storage, and API integrations. </p>
+                    <a href="#features" class="btn btn-jasynova mt-3"> Explore Features </a>
                 </div>
-
             </div>
-
-
             <!-- SLIDE 2 -->
-
             <div class="carousel-item">
-
                 <div class="container hero-content">
-
-                    <p class="eyebrow-text fw-bold">
-                        INTERACTIVE WEB TECHNOLOGY
-                    </p>
-
-                    <h1>
-                        Learn Through Interaction
-                    </h1>
-
-                    <p>
-                        Explore how JavaScript brings websites to life
-                        through browser storage, user preferences,
-                        and interactive web features.
-                    </p>
-
-                    <a
-                        href="#features"
-                        class="btn btn-jasynova mt-3"
-                    >
-                        Discover Features
-                    </a>
-
+                    <p class="eyebrow-text fw-bold"> INTERACTIVE WEB TECHNOLOGY </p>
+                    <h1> Learn Through Interaction </h1>
+                    <p> Explore how JavaScript brings websites to life through browser storage, user preferences, and interactive web features. </p>
+                    <a href="#features" class="btn btn-jasynova mt-3"> Discover Features</a>
                 </div>
-
             </div>
-
-
             <!-- SLIDE 3 -->
-
             <div class="carousel-item">
-
                 <div class="container hero-content">
-
-                    <p class="eyebrow-text fw-bold">
-                        BUILDING WITH THE WEB
-                    </p>
-
-                    <h1>
-                        Connecting Ideas to the Web
-                    </h1>
-
-                    <p>
-                        Discover how APIs and modern web technologies
-                        connect websites to real-world data, including
-                        weather, maps, and other interactive services.
-                    </p>
-
-                    <a
-                        href="#features"
-                        class="btn btn-jasynova mt-3"
-                    >
-                        Start Exploring
-                    </a>
-
+                    <p class="eyebrow-text fw-bold"> BUILDING WITH THE WEB </p>
+                    <h1> Connecting Ideas to the Web </h1>
+                    <p> Discover how APIs and modern web technologies connect websites to real-world data, including weather, maps, and other interactive services.</p>
+                    <a href="#features" class="btn btn-jasynova mt-3" >Start Exploring </a>
                 </div>
-
             </div>
-
         </div>
-
-
         <!-- PREVIOUS BUTTON -->
-
         <button
             class="carousel-control-prev"
             type="button"
             data-bs-target="#jasynovaCarousel"
-            data-bs-slide="prev"
-        >
-
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
-
             <span class="visually-hidden">
                 Previous
             </span>
-
         </button>
-
-
         <!-- NEXT BUTTON -->
-
         <button
             class="carousel-control-next"
             type="button"
             data-bs-target="#jasynovaCarousel"
             data-bs-slide="next"
         >
-
             <span class="carousel-control-next-icon"></span>
-
             <span class="visually-hidden">
                 Next
             </span>
-
         </button>
-
     </div>
-
 </section>
-<!-- =========================================
-     FEATURES
-========================================= -->
-
+<!-- FEATURES -->
 <main>
-
 <section
     class="py-5"
     id="features"
