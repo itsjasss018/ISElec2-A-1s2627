@@ -1,55 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Local Storage - User Preferences</title>
-    <style>
-        body.dark-mode { background-color: black; color: white; }
-    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Preferences | JASYNOVA</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <h2>Choose Your Preferences</h2>
-    
-<label>Theme:</label>
-    <select id="theme">
-        <option value="light">Light Mode</option>
-        <option value="dark">Dark Mode</option>
-    </select>
- 
-   
-<label>Language:</label>
-    <select id="language">
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
-    </select>
- 
-    <button onclick="savePreferences()">Save Preferences</button>
-    <p id="message"></p>
- 
-    <script>
-        function savePreferences() {
-           let theme = document.getElementById("theme").value;
-           let language = document.getElementById("language").value;
-           localStorage.setItem("theme", theme);
-           localStorage.setItem("language", language);
-           applyPreferences();
-           document.getElementById("message").innerText = "Preferences Saved!";
-        }
- 
-        function applyPreferences() {
-            let savedTheme = localStorage.getItem("theme");
-            let savedLanguage = localStorage.getItem("language");
-            
-            if (savedTheme === "dark") {
-               document.body.classList.add("dark-mode");
-            } else {
-               document.body.classList.remove("dark-mode");
-            }
- 
-           document.getElementById("theme").value = savedTheme || "light";
-           document.getElementById("language").value = savedLanguage || "en";
-        }
- 
-        applyPreferences();
-    </script>
-</body>
-</html>
+
+
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            JASY<span>NOVA</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="index.html">
+                       HOME
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="local_storage.html">
+                       STORAGE
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="user_preferences.html">
+                       PREFERENCES
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="weather_api.html">
+                       WEATHER
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="map_api.html">
+                       MAPS
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="github_api.html">
+                       GITHUB
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<main class="tool-section flex-grow-1">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="eyebrow-text fw-bold">
+                FEATURE 02
+            </p>
+
+            <h1 class="section-title">
+                USER PREFERENCES
+            </h1>
+
+            <p class="section-subtitle">
+                Save your preferred settings using Local Storage.
+            </p>
+
+        </div>
+
+
+        <div class="card tool-card mx-auto"
+             style="max-width: 700px;">
+
+            <div class="card-body">
+
+                <h3 class="mb-4">
+                    Customize Preferences
+                </h3>
+
+
+                <div class="mb-3">
+
+                    <label
+                        for="theme"
+                        class="form-label"
+                    >
+                        Select Theme
+                    </label>
+
+                    <select
+                        id="theme"
+                        class="form-select"
+                    >
+                        <option value="light">
+                            Light
+                        </option>
+
+                        <option value="dark">
+                            Dark
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label
+                        for="language"
+                        class="form-label"
+                    >
+                        Select Language
+                    </label>
+
+                    <select
+                        id="language"
+                        class="form-select"
+                    >
+                        <option value="English">
+                            English
+                        </option>
+
+                        <option value="Filipino">
+                            Filipino
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="btn btn-jasynova"
+                    onclick="savePreferences()"
+                >
+                    SAVE PREFERENCES
+                </button>
+
+
+                <button
+                    class="btn btn-purple"
+                    onclick="loadPreferences()"
+                >
+                    LOAD PREFERENCES
+                </button>
+
+
+                <div
+                    id="result"
+                    class="result-box"
+                >
+                    Your preferences will appear here.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container text-center">
+
+        <h5>JASYNOVA</h5>
+
+        <div class="footer-bottom">
+            © 2026 JASYNOVA | Web Technology Laboratory
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function savePreferences() {
+
+    let theme =
+        document.getElementById("theme").value;
+
+    let language =
+        document.getElementById("language").value;
+
+
+    localStorage.setItem("theme", theme);
+    localStorage.setItem("language", language);
+
+
+    applyTheme(theme);
+
+
+    document.getElementById("result").innerText =
+        "Preferences saved successfully!";
+
+}
+
+
+function loadPreferences() {
+
+    let theme =
+        localStorage.getItem("theme");
+
+    let language =
+        localStorage.getItem("language");
+
+
+    if (theme && language) {
+
+        document.getElementById("theme").value = theme;
+
+        document.getElementById("language").value = language;
+
+
+        applyTheme(theme);
+
+
+        document.getElementById("result").innerText =
+            "Theme: " + theme +
+            " | Language: " + language;
+
+    } else {
+
+        document.getElementById("result").innerText =
+            "No saved preferences found.";
+
+    }
+
+}
+
+
+/* APPLY THEME */
+
+function applyTheme(theme) {
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+    }
+
+}
+
+
+/* LOAD SAVED THEME AUTOMATICALLY */
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    let savedTheme =
+        localStorage.getItem("theme");
+
+    if (savedTheme) {
+
+        document.getElementById("theme").value =
+            savedTheme;
+
+        applyTheme(savedTheme);
+
+    }
+
+});
+
+</script>

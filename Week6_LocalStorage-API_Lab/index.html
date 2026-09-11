@@ -1,348 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NEXORA</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JASYNOVA | Web Technology Hub</title>
+
+
+    <!-- BOOTSTRAP CSS -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- CUSTOM CSS -->
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <header class="navbar">
-        <div class="logo">
-            NEXORA
-        </div>
-        <nav class="nav-links">
-            <a href="#home" class="active">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#features">FEATURES</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-        <!-- SEARCH -->
-        <div class="search-box">
-            <input 
-                type="text" 
-                id="searchInput" 
-                placeholder="Search..."
-            >
-            <button id="searchButton">
-                SEARCH
-            </button>
-        </div>
-    </header>
-    <!-- HERO / CAROUSEL -->
-    <section class="hero" id="home">
-        <!-- SLIDE 1 -->
-        <div class="slide active-slide">
-            <img src="nexora101.png" alt="Slide 1">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <h1>WELCOME TO NEXORA</h1>
-                <p> Discover modern solutions designed to connect,inspire, and create a better digital experience.</p>
-                <div class="hero-buttons">
-                    <a href="#features" class="btn primary-btn">
-                        EXPLORE FEATURES
-                    </a>
-                    <a href="#about" class="btn secondary-btn">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- SLIDE 2 -->
-        <div class="slide">
-            <img src="nexora101.png" alt="Slide 2">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <h1> EVERYTHING YOU NEED TO EXPLORE WEB TECHNOLOGIES</h1>
-                <p>Discover interactive tools powered by JavaScript, APIs, and browser technologies.</p>
-                <div class="hero-buttons">
-                    <a href="#features" class="btn primary-btn">
-                        VIEW FEATURES
-                    </a>
-                    <a href="#contact" class="btn secondary-btn">
-                        CONTACT US
-                    </a>
-                </div>
 
-            </div>
-        </div>
-        <!-- SLIDE 3 -->
-        <div class="slide">
-            <img src="nexora101.png" alt="Slide 3">
-            <div class="overlay"></div>
-            <div class="hero-content">
-                <h1>READY TO EXPLORE?</h1>
-                <p>Experience the power of interactive web technologies in one place.</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn primary-btn">
-                        GET STARTED
-                    </a>
-                    <a href="#contact" class="btn secondary-btn">
-                        CONTACT US
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- LEFT ARROW -->
-        <button class="carousel-arrow left-arrow" id="prevBtn">
-            &#10094;
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            JASY<span>NOVA</span>
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
         </button>
-        <!-- RIGHT ARROW -->
-        <button class="carousel-arrow right-arrow" id="nextBtn">
-            &#10095;
-        </button>
-        <!-- SLIDE INDICATORS -->
-        <div class="dots">
-            <span class="dot active-dot" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="index.html">
+                        HOME
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="local_storage.html">
+                        STORAGE
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="user_preferences.html">
+                        PREFERENCES
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="weather_api.html">
+                        WEATHER
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="map_api.html">
+                        MAPS
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="github_api.html">
+                        GITHUB
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
-    </section>
-    <section class="features-section" id="features">
-
-    <div class="features-overlay"></div>
-
-    <div class="section-heading">
-
-        <p class="eyebrow">EXPLORE</p>
-
-        <h2>NEXORA FEATURES</h2>
-
-        <p>
-            Explore the different web technologies
-            included in NEXORA.
-        </p>
 
     </div>
 
+</nav>
 
-    <div class="feature-grid">
 
-        <!-- LOCAL STORAGE -->
 
-        <div class="feature-card">
+<!-- HERO CAROUSEL -->
 
-            <div class="card-image">
-                <img src="ls.png"
-                     alt="Local Storage">
+<section class="hero-section">
+
+    <div
+        id="jasynovaCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+    >
+
+        <!-- INDICATORS -->
+
+        <div class="carousel-indicators">
+
+            <button
+                type="button"
+                data-bs-target="#jasynovaCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+            ></button>
+
+            <button
+                type="button"
+                data-bs-target="#jasynovaCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+            ></button>
+
+            <button
+                type="button"
+                data-bs-target="#jasynovaCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+            ></button>
+
+        </div>
+
+
+        <!-- SLIDES -->
+
+        <div class="carousel-inner">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="carousel-item active">
+
+                <div class="container hero-content">
+
+                    <p class="eyebrow-text fw-bold">
+                        WEB TECHNOLOGY LABORATORY
+                    </p>
+
+                    <h1>
+                        Welcome to JASYNOVA
+                    </h1>
+
+                    <p>
+                        A centralized web technology hub showcasing
+                        interactive browser features, Local Storage,
+                        and API integrations.
+                    </p>
+
+                    <a
+                        href="#features"
+                        class="btn btn-jasynova mt-3"
+                    >
+                        Explore Features
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="card-content">
 
-                <div class="feature-number">01</div>
+            <!-- SLIDE 2 -->
 
-                <h3>LOCAL STORAGE</h3>
+            <div class="carousel-item">
 
-                <p>
-                    Save and retrieve information directly
-                    from your browser using Local Storage.
-                </p>
+                <div class="container hero-content">
 
-                <a href="local_storage.html"
-                   class="learn-btn">
-                    LEARN MORE →
-            </a>
+                    <p class="eyebrow-text fw-bold">
+                        INTERACTIVE WEB TECHNOLOGY
+                    </p>
+
+                    <h1>
+                        Learn Through Interaction
+                    </h1>
+
+                    <p>
+                        Explore how JavaScript brings websites to life
+                        through browser storage, user preferences,
+                        and interactive web features.
+                    </p>
+
+                    <a
+                        href="#features"
+                        class="btn btn-jasynova mt-3"
+                    >
+                        Discover Features
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="carousel-item">
+
+                <div class="container hero-content">
+
+                    <p class="eyebrow-text fw-bold">
+                        BUILDING WITH THE WEB
+                    </p>
+
+                    <h1>
+                        Connecting Ideas to the Web
+                    </h1>
+
+                    <p>
+                        Discover how APIs and modern web technologies
+                        connect websites to real-world data, including
+                        weather, maps, and other interactive services.
+                    </p>
+
+                    <a
+                        href="#features"
+                        class="btn btn-jasynova mt-3"
+                    >
+                        Start Exploring
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
 
-        <!-- PREFERENCES -->
+        <!-- PREVIOUS BUTTON -->
 
-        <div class="feature-card">
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#jasynovaCarousel"
+            data-bs-slide="prev"
+        >
 
-            <div class="card-image">
-                <img src="up.png"
-                     alt="Preferences">
-            </div>
+            <span class="carousel-control-prev-icon"></span>
 
-            <div class="card-content">
+            <span class="visually-hidden">
+                Previous
+            </span>
 
-                <div class="feature-number">02</div>
-
-                <h3>PREFERENCES</h3>
-
-                <p>
-                    Customize your preferences and save
-                    your selected settings.
-                </p>
-
-                <a href="user_preferences.html"
-                   class="learn-btn">
-                    LEARN MORE →
-                </a>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- WEATHER -->
+        <!-- NEXT BUTTON -->
 
-        <div class="feature-card">
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#jasynovaCarousel"
+            data-bs-slide="next"
+        >
 
-            <div class="card-image">
-                <img src="weather.png"
-                     alt="Weather">
-            </div>
+            <span class="carousel-control-next-icon"></span>
 
-            <div class="card-content">
+            <span class="visually-hidden">
+                Next
+            </span>
 
-                <div class="feature-number">03</div>
+        </button>
 
-                <h3>WEATHER</h3>
+    </div>
 
-                <p>
-                    Search for a city and view its current
-                    weather information.
-                </p>
+</section>
+<!-- =========================================
+     FEATURES
+========================================= -->
 
-                <a href="weather_api.html"
-                   class="learn-btn">
-                    LEARN MORE →
-                </a>
+<main>
 
-            </div>
+<section
+    class="py-5"
+    id="features"
+>
 
-        </div>
+    <div class="container">
 
+        <div class="row g-4 justify-content-center">
 
-        <!-- MAPS -->
+           <p class="eyebrow-text fw-bold">
+    EXPLORE
+</p>
+          
 
-        <div class="feature-card">
+            <h2 class="section-title">
+                JASYNOVA FEATURES
+            </h2>
 
-            <div class="card-image">
-                <img src="map.png"
-                     alt="Maps">
-            </div>
-
-            <div class="card-content">
-
-                <div class="feature-number">04</div>
-
-                <h3>MAPS</h3>
-
-                <p>
-                    Search for locations and view them
-                    using an interactive map.
-                </p>
-
-                <a href="map_api.html"
-                   class="learn-btn">
-                    LEARN MORE →
-                </a>
-
-            </div>
+            <p class="section-subtitle">
+                Explore the different laboratory activities
+                created using JavaScript, Local Storage,
+                and web APIs.
+            </p>
 
         </div>
 
 
-        <!-- GITHUB -->
+        <div class="row g-4 justify-content-center">
 
-        <div class="feature-card">
 
-            <div class="card-image">
-                <img src="github.png"
-                     alt="GitHub">
+            <!-- LOCAL STORAGE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card feature-card">
+
+                    <div class="card-body p-4">
+
+                        <div class="feature-number">
+                            01
+                        </div>
+
+                        <h3>
+                            LOCAL STORAGE
+                        </h3>
+
+                        <p>
+                            Save and retrieve information
+                            directly from your browser.
+                        </p>
+
+                        <a
+                            href="local_storage.html"
+                            class="btn btn-jasynova"
+                        >
+                            LEARN MORE
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="card-content">
 
-                <div class="feature-number">05</div>
 
-                <h3>GITHUB</h3>
+            <!-- PREFERENCES -->
 
-                <p>
-                    Search GitHub users and view their
-                    public profile information.
-                </p>
+            <div class="col-md-6 col-lg-4">
 
-                <a href="github_api.html"
-                   class="learn-btn">
-                    LEARN MORE →
-                </a>
+                <div class="card feature-card">
+
+                    <div class="card-body p-4">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+                        <h3>
+                            USER PREFERENCES
+                        </h3>
+
+                        <p>
+                            Save your selected theme and
+                            language preferences.
+                        </p>
+
+                        <a
+                            href="user_preferences.html"
+                            class="btn btn-jasynova"
+                        >
+                            LEARN MORE
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
+
+
+
+            <!-- WEATHER -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card feature-card">
+
+                    <div class="card-body p-4">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+                        <h3>
+                            WEATHER API
+                        </h3>
+
+                        <p>
+                            Search for weather information
+                            using an external API.
+                        </p>
+
+                        <a
+                            href="weather_api.html"
+                            class="btn btn-jasynova"
+                        >
+                            LEARN MORE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MAP -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card feature-card">
+
+                    <div class="card-body p-4">
+
+                        <div class="feature-number">
+                            04
+                        </div>
+
+                        <h3>
+                            MAP API
+                        </h3>
+
+                        <p>
+                            Search locations and explore
+                            them using an interactive map.
+                        </p>
+
+                        <a
+                            href="map_api.html"
+                            class="btn btn-jasynova"
+                        >
+                            LEARN MORE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GITHUB -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card feature-card">
+
+                    <div class="card-body p-4">
+
+                        <div class="feature-number">
+                            05
+                        </div>
+
+                        <h3>
+                            GITHUB API
+                        </h3>
+
+                        <p>
+                            Search GitHub users and view
+                            their public profile information.
+                        </p>
+
+                        <a
+                            href="github_api.html"
+                            class="btn btn-jasynova"
+                        >
+                            LEARN MORE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
 
 </section>
-    </section>
 
-    <script src="script.js"></script>
+</main>
 
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
 <!-- FOOTER -->
-<footer class="footer" id="contact">
 
-    <div class="footer-container">
+<footer class="footer">
 
-        <!-- NEXORA -->
-        <div class="footer-column">
-            <h3>NEXORA</h3>
-            <p>
-                About NEXORA
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- BRAND -->
+
+            <div class="col-lg-5">
+
+                <h5>JASYNOVA</h5>
+
+                <p>
+                    A modern web technology hub showcasing
+                    JavaScript, Local Storage, and web API
+                    laboratory activities.
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-lg-3">
+
+                <h5>Quick Links</h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#features">Features</a>
+                    </li>
+
+                    <li>
+                        <a href="local_storage.html">Local Storage</a>
+                    </li>
+
+                    <li>
+                        <a href="user_preferences.html">Preferences</a>
+                    </li>
+
+                    <li>
+                        <a href="weather_api.html">Weather</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FOLLOW US -->
+
+            <div class="col-lg-4">
+
+                <h5>Connect</h5>
+
+                <p>
+                    Explore more projects and connect with JASYNOVA.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                    <a href="#">
+                        Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom text-center">
+
+            <p class="mb-0">
+                © 2026 JASYNOVA. Web Technology Laboratory.
             </p>
-            <p class="footer-description">
-                Explore modern web technologies and
-                interactive digital solutions in one place.
-            </p>
+
         </div>
 
-
-        <!-- QUICK LINKS -->
-        <div class="footer-column">
-            <h3>QUICK LINKS</h3>
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-        </div>
-
-
-        <!-- SUPPORT -->
-        <div class="footer-column">
-            <h3>SUPPORT</h3>
-
-            <a href="#faq">FAQ</a>
-            <a href="#help">Help</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-
-        <!-- CONTACT -->
-        <div class="footer-column">
-            <h3>CONTACT</h3>
-
-            <a href="mailto:nexora@example.com">Email</a>
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="#socials">Socials</a>
-        </div>
-
-    </div>
-
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-        <p>
-            © 2026 NEXORA. All Rights Reserved.
-        </p>
     </div>
 
 </footer>
 
 
+<!-- BOOTSTRAP JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
 
 
 </body>
-</html>
 
-</body>
 </html>
