@@ -1,142 +1,91 @@
-/* =========================================
-   JASYNOVA — CALLISTE GREEN THEME
-========================================= */
-
+/* JASYNOVA — CALLISTE GREEN THEME */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-
-
 /* COLOR VARIABLES*/
-
 :root {
     --calliste-green: #7a8450;
     --apricot-white: #f7efda;
-
     --deep-green: #3f4829;
     --olive-dark: #5f6b3c;
     --soft-sage: #cbd5b5;
-
     --earth-brown: #4a3f35;
     --light-cream: #fffdf7;
-
     --border-color: #d8d1bd;
 }
 
-
-/* =========================================
-   GENERAL
-========================================= */
-
+/* GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     font-family: "DM Sans", sans-serif;
-
     background-color: var(--apricot-white);
-
     color: var(--earth-brown);
-
     min-height: 100vh;
 }
 
-
-/* =========================================
-   NAVBAR
-========================================= */
-
+/* NAVBAR */
 .navbar {
     background-color: var(--apricot-white);
-
     border-bottom: 1px solid var(--border-color);
-
     padding: 18px 0;
 }
 
-
 .navbar-brand {
     font-family: "Playfair Display", serif;
-
     font-size: 1.7rem;
-
     font-weight: 700;
-
     letter-spacing: 1px;
-
     color: var(--deep-green) !important;
 }
-
 
 .navbar-brand span {
     color: var(--calliste-green);
 }
 
-
 /* NAVIGATION */
-
 .nav-link {
     color: var(--earth-brown) !important;
-
     font-size: 0.85rem;
-
     font-weight: 600;
-
     letter-spacing: 0.5px;
-
     margin-left: 12px;
-
     transition: 0.3s;
 }
-
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--calliste-green) !important;
 }
 
-
 /* ACTIVE NAVIGATION */
-
 .nav-link.active {
     position: relative;
 }
 
-
 .nav-link.active::after {
     content: "";
-
     position: absolute;
-
     left: 8px;
     right: 8px;
-
     bottom: 2px;
-
     height: 2px;
-
     background-color: var(--calliste-green);
 
 }
 
-/* =========================================
-   HERO SECTION & CAROUSEL
-========================================= */
-
+/* HERO SECTION & CAROUSEL */
 .hero-section {
     position: relative;
     overflow: hidden;
     min-height: 620px;
-
     text-align: center;
-
     background:
         radial-gradient(
             circle at top left,
@@ -151,24 +100,18 @@ body {
         var(--apricot-white);
 }
 
-
 /* CAROUSEL */
-
 .hero-section .carousel,
 .hero-section .carousel-inner {
     min-height: 620px;
 }
 
-
 /* IMPORTANT: Don't use display:flex directly here */
-
 .hero-section .carousel-item {
     min-height: 620px;
 }
 
-
 /* HERO CONTENT INSIDE EACH SLIDE */
-
 .hero-content {
     min-height: 620px;
 
@@ -189,442 +132,272 @@ body {
 
 
 /* HERO HEADING */
-
 .hero-section h1 {
     font-family: "Playfair Display", serif;
-
     font-size: clamp(3rem, 7vw, 5.5rem);
-
     font-weight: 700;
-
     color: var(--deep-green);
-
     margin-bottom: 20px;
-
     letter-spacing: -2px;
 }
 
-
 .hero-section h1::after {
     content: ".";
-
     color: var(--calliste-green);
 }
 
-
 /* HERO PARAGRAPH */
-
 .hero-section p {
     color: var(--earth-brown);
-
     font-size: 1.05rem;
-
     max-width: 650px;
-
     line-height: 1.8;
-
     text-align: center;
 }
 
-
 /* EYEBROW TEXT */
-
 .eyebrow-text {
     color: var(--calliste-green) !important;
-
     letter-spacing: 2px;
-
     font-size: 0.8rem;
 }
 
-
-/* =========================================
-   CAROUSEL INDICATORS
-========================================= */
-
+/* CAROUSEL INDICATORS */
 .carousel-indicators {
     margin-bottom: 35px;
 }
 
-
 .carousel-indicators button {
     width: 8px !important;
-
     height: 8px !important;
-
     border-radius: 50%;
-
     background-color: var(--calliste-green) !important;
-
     margin: 0 6px !important;
 }
 
-
-/* =========================================
-   CAROUSEL ARROWS
-========================================= */
-
+/* CAROUSEL ARROWS */
 .carousel-control-prev,
 .carousel-control-next {
     width: 8%;
 }
 
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(35%) sepia(20%) saturate(900%);
 }
-/* =========================================
-   SECTION
-========================================= */
 
+/* SECTION */
 .section-title {
     font-family: "Playfair Display", serif;
-
     font-size: 2.6rem;
-
     font-weight: 700;
-
     color: var(--deep-green);
 }
-
 
 .section-subtitle {
     color: #756c5e;
-
     font-size: 1rem;
 }
 
-
-/* =========================================
-   BUTTONS
-========================================= */
-
+/* BUTTONS */
 .btn-jasynova {
     background-color: var(--calliste-green);
-
     border: 1px solid var(--calliste-green);
-
     color: var(--light-cream);
-
     border-radius: 8px;
-
     padding: 12px 24px;
-
     font-weight: 600;
-
     transition: 0.3s;
-
 }
-
 
 .btn-jasynova:hover {
     background-color: var(--olive-dark);
-
     border-color: var(--olive-dark);
-
     color: white;
-
     transform: translateY(-2px);
 }
 
-
 /* SECONDARY BUTTON */
-
 .btn-purple {
     background-color: transparent;
-
     border: 1px solid var(--calliste-green);
-
     color: var(--calliste-green);
-
     border-radius: 8px;
-
     padding: 12px 24px;
-
     font-weight: 600;
-
     transition: 0.3s;
 }
 
-
 .btn-purple:hover {
     background-color: var(--soft-sage);
-
     color: var(--deep-green);
 }
 
-
-/* =========================================
-   FEATURES
-========================================= */
+/* FEATURES */
 
 #features {
     position: relative;
-
     padding-top: 80px !important;
-
     padding-bottom: 100px !important;
 }
 
-
 /* FEATURE CARD */
-
 .feature-card {
     height: 100%;
-
     background-color: rgba(255, 253, 247, 0.75);
-
     border: 1px solid var(--border-color);
-
     border-radius: 16px;
-
     overflow: hidden;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
-
     box-shadow:
         0 8px 25px rgba(74, 63, 53, 0.06);
 }
 
-
 .feature-card:hover {
     transform: translateY(-8px);
-
     border-color: var(--calliste-green);
-
     box-shadow:
         0 18px 40px rgba(74, 63, 53, 0.12);
 }
 
-
 /* FEATURE NUMBER */
-
 .feature-number {
     width: 50px;
-
     height: 50px;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     border-radius: 50%;
-
     background-color: var(--calliste-green);
-
     color: var(--light-cream);
-
     font-weight: 700;
-
     margin-bottom: 22px;
 }
 
-
 /* CARD TEXT */
-
 .feature-card h3 {
     font-family: "DM Sans", sans-serif;
-
     font-size: 1.15rem;
-
     font-weight: 700;
-
     color: var(--deep-green);
 }
 
-
 .feature-card p {
     color: #756c5e;
-
     line-height: 1.7;
 }
 
-
-/* =========================================
-   TOOL PAGES
-========================================= */
-
+/* TOOL PAGES */
 .tool-section {
     padding: 90px 0;
-
     flex-grow: 1;
 }
 
-
 .tool-card {
     background-color: var(--light-cream);
-
     border: 1px solid var(--border-color);
-
     border-radius: 18px;
-
     color: var(--earth-brown);
-
     box-shadow:
         0 15px 40px rgba(74, 63, 53, 0.08);
 }
-
 
 .tool-card .card-body {
     padding: 40px;
 }
 
-
-/* =========================================
-   FORMS
-========================================= */
-
+/* FORMS */
 .form-control,
 .form-select {
     background-color: var(--light-cream);
-
     border: 1px solid var(--border-color);
-
     color: var(--earth-brown);
-
     border-radius: 8px;
-
     padding: 12px 15px;
 }
-
 
 .form-control::placeholder {
     color: #9b927f;
 }
 
-
 .form-control:focus,
 .form-select:focus {
     background-color: var(--light-cream);
-
     color: var(--earth-brown);
-
     border-color: var(--calliste-green);
-
     box-shadow:
         0 0 0 0.2rem
         rgba(122, 132, 80, 0.15);
 }
 
-
 .form-label {
     color: var(--deep-green);
-
     font-weight: 600;
 }
 
-
-/* =========================================
-   RESULT BOX
-========================================= */
-
+/* RESULT BOX */
 .result-box {
     background-color: #eef0e6;
-
     border-left: 4px solid var(--calliste-green);
-
     border-radius: 8px;
-
     color: var(--earth-brown);
-
     padding: 20px;
-
     margin-top: 25px;
-
     min-height: 60px;
 }
 
-
-/* =========================================
-   MAP
-========================================= */
-
+/* MAP */
 #map {
     height: 500px;
-
     width: 100%;
-
     border-radius: 12px;
-
     overflow: hidden;
-
     border: 1px solid var(--border-color);
 }
 
-
-/* =========================================
-   GITHUB AVATAR
-========================================= */
-
+/* GITHUB AVATAR */
 .github-avatar {
     width: 130px;
-
     height: 130px;
-
     border-radius: 50%;
-
     object-fit: cover;
-
     border: 4px solid var(--calliste-green);
-
     margin-bottom: 15px;
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
-
+/* FOOTER */
 .footer {
     background-color: var(--deep-green);
-
     color: var(--apricot-white);
-
     padding: 55px 0 25px;
-
     margin-top: auto;
 }
 
-
 .footer h5 {
     font-family: "Playfair Display", serif;
-
     color: var(--apricot-white);
-
     font-weight: 700;
 }
 
-
 .footer a {
     color: #d8dfc9;
-
     text-decoration: none;
-
     transition: 0.3s;
 }
-
 
 .footer a:hover {
     color: var(--soft-sage);
 }
 
-
 .footer-bottom {
     border-top:
         1px solid rgba(247, 239, 218, 0.2);
-
     margin-top: 30px;
-
     padding-top: 20px;
-
     color: #d8dfc9;
-
     font-size: 0.85rem;
 }
 
@@ -645,28 +418,19 @@ body {
 
 .footer-socials a {
     display: inline-block;
-
     padding: 8px 14px;
-
     border: 1px solid rgba(247, 239, 218, 0.3);
-
     border-radius: 6px;
-
     color: var(--apricot-white);
 }
 
 .footer-socials a:hover {
     background-color: var(--calliste-green);
-
     border-color: var(--calliste-green);
-
     color: white;
 }
 
-/* =========================================
-   DARK MODE
-========================================= */
-
+/* DARK MODE */
 body.dark-mode {
     background-color: #2f3521;
     color: var(--apricot-white);
@@ -747,23 +511,12 @@ body.dark-mode .hero-section p {
 }
 
 
-
-
-
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
+/* RESPONSIVE */
 @media (max-width: 991px) {
-
     .nav-link {
         margin-left: 0;
-
         padding: 12px 0;
     }
-
 
     .nav-link.active::after {
         display: none;
@@ -771,28 +524,22 @@ body.dark-mode .hero-section p {
 
 }
 
-
 @media (max-width: 768px) {
-
     .hero-section {
         padding: 100px 0 85px;
     }
-
 
     .hero-section h1 {
         font-size: clamp(2.8rem, 12vw, 4.5rem);
     }
 
-
     .section-title {
         font-size: 2rem;
     }
 
-
     .tool-card .card-body {
         padding: 25px;
     }
-
 
     #map {
         height: 400px;
